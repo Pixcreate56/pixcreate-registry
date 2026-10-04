@@ -16,6 +16,19 @@
       ]
     },
     {
+      "name": "pixcreate-named-icon",
+      "type": "registry:lib",
+      "title": "PixCreate 图标（自包含）",
+      "description": "NamedIcon 发布版：内嵌组件所需 SVG（Remix Icon, Apache 2.0）",
+      "files": [
+        {
+          "path": "src/components/NamedIcon.tsx",
+          "type": "registry:lib",
+          "source": "dist/lite-NamedIcon.tsx"
+        }
+      ]
+    },
+    {
       "name": "gradient-mesh-bg",
       "type": "registry:component",
       "title": "渐变网格背景",
@@ -192,6 +205,130 @@
         },
         {
           "path": "src/tokens/inputs/TextInput.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "voice-pill",
+      "type": "registry:component",
+      "title": "语音胶囊",
+      "description": "按住说话麦克风胶囊：展开实时波形+计时+左滑取消",
+      "dependencies": [],
+      "registryDependencies": [
+        "pixcreate-named-icon",
+        "pixcreate-tokens"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/voice/VoicePill.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/tokens/voice/VoicePill.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "ai-voice-glow",
+      "type": "registry:component",
+      "title": "语音辉光",
+      "description": "声控彩色光带随语音从输入框底部升起",
+      "dependencies": [
+        "voice-glow",
+        "react",
+        "react-dom"
+      ],
+      "registryDependencies": [
+        "pixcreate-named-icon"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/ai/VoiceGlow.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "loading-thought-line",
+      "type": "registry:component",
+      "title": "AI 思考线",
+      "description": "思考进度线 + 步骤逐条浮现",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "pixcreate-named-icon",
+        "pixcreate-tokens"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/loading/ThoughtLine.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/tokens/loading/ThoughtLine.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "nav-branched-menu",
+      "type": "registry:component",
+      "title": "分支菜单",
+      "description": "SVG 分支线放射菜单，描线动画+折叠",
+      "dependencies": [],
+      "registryDependencies": [
+        "pixcreate-named-icon",
+        "pixcreate-tokens"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/navigation/BranchedMenu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/tokens/navigation/BranchedMenu.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "nav-segmented",
+      "type": "registry:component",
+      "title": "分段导航",
+      "description": "分段切换导航，文字+图标/仅文字/仅图标三模式",
+      "dependencies": [],
+      "registryDependencies": [
+        "pixcreate-named-icon"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/navigation/SegmentedNav.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/tokens/navigation/SegmentedNav.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tilt-card",
+      "type": "registry:component",
+      "title": "倾斜卡片",
+      "description": "鼠标悬停 3D 倾斜卡片",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "pixcreate-named-icon",
+        "pixcreate-tokens"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/cards/TiltCard.tsx",
           "type": "registry:component"
         }
       ]
