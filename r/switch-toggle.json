@@ -1,0 +1,20 @@
+{
+  "name": "switch-toggle",
+  "type": "registry:component",
+  "title": "开关按钮",
+  "description": "标签嵌左开关嵌右的整行开关（中性效率风三态）",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/tokens/buttons/SwitchToggle.tsx",
+      "content": "'use client';\n\n/* SwitchToggle — 开关按钮（源自 PixCreate 面板控件体系的独立化组件）\n * 幽灵轨道样式：标签嵌左、开关嵌右；整行可点，button 原生键盘可达（Space/Enter）\n * 效率控件原则：中性灰白，开态不携带品牌色 */\nimport './SwitchToggle.css';\n\nexport interface SwitchToggleProps {\n  label?: string;\n  checked?: boolean;\n  onChange?: (checked: boolean) => void;\n  isDisabled?: boolean;\n}\n\nexport default function SwitchToggle({\n  label = '',\n  checked = false,\n  onChange,\n  isDisabled = false\n}: SwitchToggleProps) {\n  const toggle = () => {\n    if (isDisabled) return;\n    onChange?.(!checked);\n  };\n\n  return (\n    <button\n      type=\"button\"\n      className=\"ts-row\"\n      role=\"switch\"\n      aria-checked={checked}\n      aria-label={label || undefined}\n      disabled={isDisabled}\n      data-checked={checked ? 'true' : 'false'}\n      onClick={toggle}\n    >\n      <span className=\"ts-label\">{label}</span>\n      <span className=\"ts-switch\">\n        <span className=\"ts-knob\" />\n      </span>\n    </button>\n  );\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/tokens/buttons/SwitchToggle.css",
+      "content": "/* SwitchToggle — 效率控件：中性灰白，无品牌色 */\n.ts-row {\n  display: flex;\n  align-items: center;\n  width: 100%;\n  height: var(--control-md);\n  padding: 0 var(--space-l);\n  border: none; /* 显式清除 button UA 默认边框 */\n  border-radius: var(--radius-s);\n  background: var(--color-bg-elevated);\n  cursor: pointer;\n  text-align: left;\n  font: inherit;\n  outline: none;\n  user-select: none;\n  transition: transform var(--transition-fast), background-color var(--transition-fast);\n}\n\n.ts-row:hover:not([disabled]) {\n  background: color-mix(in srgb, #ffffff 5%, var(--color-bg-elevated)); /* hover 白色半透明 */\n}\n\n.ts-row[data-checked='true'] {\n  background: color-mix(in srgb, #ffffff 5%, var(--color-bg-elevated)); /* 选中态叠亮底 */\n  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);\n}\n\n.ts-row:active:not([disabled]) {\n  transform: scale(0.985);\n}\n\n.ts-row:focus-visible {\n  outline: 2px solid color-mix(in srgb, var(--color-text-secondary) 55%, transparent);\n  outline-offset: 2px;\n}\n\n.ts-row[disabled] {\n  opacity: 0.35;\n  cursor: not-allowed;\n}\n\n.ts-label {\n  white-space: nowrap;\n  color: var(--color-text-muted);\n  font-size: var(--text-sm);\n  font-weight: 500;\n  letter-spacing: 0.01em;\n  pointer-events: none;\n}\n\n/* 开关体 — 遵循 reactbits 配色规律：轨道与旋钮永远明暗反转，零饱和中性灰 */\n.ts-switch {\n  position: relative;\n  margin-left: auto;\n  width: 36px;\n  height: 20px;\n  border-radius: 999px;\n  background: var(--color-bg-active);\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  flex-shrink: 0;\n  pointer-events: none;\n  transition: background-color var(--transition-fast), border-color var(--transition-fast);\n}\n\n/* 开态：亮轨道无边（亮色即边界） */\n.ts-row[data-checked='true'] .ts-switch {\n  background: var(--color-text-primary);\n  border-color: transparent;\n}\n\n/* 关态：旋钮中灰“浮”在暗轨道上 */\n.ts-knob {\n  position: absolute;\n  top: 2px;\n  left: 2px;\n  width: 14px;\n  height: 14px;\n  border-radius: 999px;\n  background: var(--color-text-muted);\n  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);\n  transition: transform var(--transition-fast), background-color var(--transition-fast);\n}\n\n/* 开态：旋钮变暗色“孔洞”，与亮轨道反转（浅色主题自动反向：黑轨道+亮旋钮） */\n.ts-row[data-checked='true'] .ts-knob {\n  transform: translateX(16px);\n  background: var(--color-bg-elevated);\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .ts-row,\n  .ts-switch,\n  .ts-knob {\n    transition-duration: 0.01ms;\n  }\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

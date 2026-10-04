@@ -1,0 +1,20 @@
+{
+  "name": "text-input",
+  "type": "registry:component",
+  "title": "幽灵输入框",
+  "description": "标签嵌左输入嵌右的极简文本框（整行热区）",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/tokens/inputs/TextInput.tsx",
+      "content": "'use client';\n\n/* TextInput — 输入框（源自 PixCreate 面板 ControlInput 的独立化组件）\n * 幽灵轨道样式：标签嵌左、输入嵌右（等宽字体右对齐）\n * 三态：hover=白色半透明亮底 / 聚焦=激活态（亮底+顶部高光）/ 禁用=35% 透明\n * 效率控件原则：中性灰白，不携带品牌色 */\nimport { useRef, useState } from 'react';\nimport './TextInput.css';\n\nexport interface TextInputProps {\n  label?: string;\n  value?: string;\n  onChange?: (value: string) => void;\n  placeholder?: string;\n  maxLength?: number;\n  isDisabled?: boolean;\n}\n\nexport default function TextInput({\n  label = '',\n  value = '',\n  onChange,\n  placeholder = '',\n  maxLength,\n  isDisabled = false\n}: TextInputProps) {\n  const [focused, setFocused] = useState(false);\n  const inputRef = useRef<HTMLInputElement>(null);\n\n  return (\n    <div\n      className=\"it-field\"\n      data-focus={focused ? 'true' : 'false'}\n      data-disabled={isDisabled ? 'true' : 'false'}\n      onClick={() => inputRef.current?.focus()}\n    >\n      <span className=\"it-label\">{label}</span>\n      <input\n        ref={inputRef}\n        className=\"it-input\"\n        type=\"text\"\n        value={value}\n        placeholder={placeholder}\n        maxLength={maxLength}\n        disabled={isDisabled}\n        aria-label={label || undefined}\n        onChange={e => onChange?.(e.target.value)}\n        onFocus={() => setFocused(true)}\n        onBlur={() => setFocused(false)}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/tokens/inputs/TextInput.css",
+      "content": "/* TextInput — 效率控件：中性灰白，三态 v3（hover 亮底 / 聚焦激活态 / 禁用） */\n.it-field {\n  position: relative;\n  display: flex;\n  align-items: center;\n  width: 100%;\n  height: var(--control-md);\n  padding: 0 var(--space-l);\n  border: none;\n  border-radius: var(--radius-s);\n  background: var(--color-hover-overlay);\n  outline: none;\n  cursor: text; /* 整行热区：点哪都聚焦输入 */\n  user-select: none;\n  transition: background-color var(--transition-fast), box-shadow var(--transition-fast);\n}\n\n.it-field:hover:not([data-disabled='true']) {\n  background: rgba(255, 255, 255, 0.09); /* hover 白色半透明 */\n}\n\n/* 聚焦 = 激活态：叠亮底 + 顶部高光（三态 v3） */\n.it-field[data-focus='true'] {\n  background: rgba(255, 255, 255, 0.09);\n  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);\n}\n\n.it-field[data-disabled='true'] {\n  opacity: 0.35;\n  cursor: not-allowed;\n}\n\n.it-label {\n  cursor: text;\n  white-space: nowrap;\n  color: var(--color-text-muted);\n  font-size: var(--text-sm);\n  font-weight: 500;\n  letter-spacing: 0.01em;\n  pointer-events: none;\n}\n\n.it-input {\n  margin-left: auto;\n  width: 55%;\n  background: transparent;\n  border: none;\n  outline: none;\n  text-align: right;\n  font-family: var(--font-mono);\n  font-size: var(--text-sm);\n  color: var(--color-text-primary);\n  caret-color: var(--color-text-primary);\n}\n\n.it-input::placeholder {\n  color: var(--color-text-muted);\n  opacity: 0.6;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

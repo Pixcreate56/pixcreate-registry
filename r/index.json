@@ -1,0 +1,78 @@
+{
+  "name": "pixcreate",
+  "homepage": "https://github.com/Pixcreate56/pixcreate-registry",
+  "items": [
+    {
+      "name": "pixcreate-tokens",
+      "type": "registry:lib",
+      "title": "PixCreate 设计令牌",
+      "description": "resolveToken + 主题派生引擎（组件 auto 色依赖）"
+    },
+    {
+      "name": "gradient-mesh-bg",
+      "type": "registry:component",
+      "title": "渐变网格背景",
+      "description": "三个渐变光球缓慢流动的背景"
+    },
+    {
+      "name": "magnetic-button",
+      "type": "registry:component",
+      "title": "磁吸按钮",
+      "description": "鼠标靠近产生磁吸效果的按钮"
+    },
+    {
+      "name": "switch-toggle",
+      "type": "registry:component",
+      "title": "开关按钮",
+      "description": "标签嵌左开关嵌右的整行开关（中性效率风三态）"
+    },
+    {
+      "name": "split-text",
+      "type": "registry:component",
+      "title": "文字拆分动效",
+      "description": "GSAP SplitText 文字入场动效"
+    },
+    {
+      "name": "tech-text",
+      "type": "registry:component",
+      "title": "科技文字",
+      "description": "Canvas 科技感文字效果"
+    },
+    {
+      "name": "text-loop",
+      "type": "registry:component",
+      "title": "循环文字",
+      "description": "SVG 路径循环滚动文字"
+    },
+    {
+      "name": "list-shredder",
+      "type": "registry:component",
+      "title": "碎纸列表",
+      "description": "删除条目时碎纸机物理动画"
+    },
+    {
+      "name": "slosh-gauge",
+      "type": "registry:component",
+      "title": "晃动液位表",
+      "description": "弹簧-阻尼物理液位仪表，拖动/点击/键盘设置"
+    },
+    {
+      "name": "scrubber-slider",
+      "type": "registry:component",
+      "title": "幽灵滑块",
+      "description": "标签与数值嵌轨道的极简滑块（触摸意图检测）"
+    },
+    {
+      "name": "dropdown-select",
+      "type": "registry:component",
+      "title": "下拉选择器",
+      "description": "标签与当前值嵌轨道的下拉框，portal 跟随 + 键盘导航"
+    },
+    {
+      "name": "text-input",
+      "type": "registry:component",
+      "title": "幽灵输入框",
+      "description": "标签嵌左输入嵌右的极简文本框（整行热区）"
+    }
+  ]
+}

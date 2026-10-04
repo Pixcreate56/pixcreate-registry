@@ -1,0 +1,200 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "pixcreate",
+  "homepage": "https://github.com/Pixcreate56/pixcreate-registry",
+  "items": [
+    {
+      "name": "pixcreate-tokens",
+      "type": "registry:lib",
+      "title": "PixCreate 设计令牌",
+      "description": "resolveToken + 主题派生引擎（组件 auto 色依赖）",
+      "files": [
+        {
+          "path": "src/design/tokens.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "gradient-mesh-bg",
+      "type": "registry:component",
+      "title": "渐变网格背景",
+      "description": "三个渐变光球缓慢流动的背景",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/backgrounds/GradientMesh.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "magnetic-button",
+      "type": "registry:component",
+      "title": "磁吸按钮",
+      "description": "鼠标靠近产生磁吸效果的按钮",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/buttons/MagneticButton.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "switch-toggle",
+      "type": "registry:component",
+      "title": "开关按钮",
+      "description": "标签嵌左开关嵌右的整行开关（中性效率风三态）",
+      "files": [
+        {
+          "path": "src/tokens/buttons/SwitchToggle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/tokens/buttons/SwitchToggle.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "split-text",
+      "type": "registry:component",
+      "title": "文字拆分动效",
+      "description": "GSAP SplitText 文字入场动效",
+      "dependencies": [
+        "gsap"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/text/SplitText.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tech-text",
+      "type": "registry:component",
+      "title": "科技文字",
+      "description": "Canvas 科技感文字效果",
+      "registryDependencies": [
+        "pixcreate-tokens"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/text/TechText.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "text-loop",
+      "type": "registry:component",
+      "title": "循环文字",
+      "description": "SVG 路径循环滚动文字",
+      "registryDependencies": [
+        "pixcreate-tokens"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/text/TextLoop.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/tokens/text/TextLoop.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "list-shredder",
+      "type": "registry:component",
+      "title": "碎纸列表",
+      "description": "删除条目时碎纸机物理动画",
+      "registryDependencies": [
+        "pixcreate-tokens"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/lists/Shredder.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/tokens/lists/Shredder.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slosh-gauge",
+      "type": "registry:component",
+      "title": "晃动液位表",
+      "description": "弹簧-阻尼物理液位仪表，拖动/点击/键盘设置",
+      "registryDependencies": [
+        "pixcreate-tokens"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/sliders/SloshGauge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/tokens/sliders/SloshGauge.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "scrubber-slider",
+      "type": "registry:component",
+      "title": "幽灵滑块",
+      "description": "标签与数值嵌轨道的极简滑块（触摸意图检测）",
+      "files": [
+        {
+          "path": "src/tokens/sliders/ScrubberSlider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/tokens/sliders/ScrubberSlider.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-select",
+      "type": "registry:component",
+      "title": "下拉选择器",
+      "description": "标签与当前值嵌轨道的下拉框，portal 跟随 + 键盘导航",
+      "files": [
+        {
+          "path": "src/tokens/selects/DropdownSelect.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/tokens/selects/DropdownSelect.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "text-input",
+      "type": "registry:component",
+      "title": "幽灵输入框",
+      "description": "标签嵌左输入嵌右的极简文本框（整行热区）",
+      "files": [
+        {
+          "path": "src/tokens/inputs/TextInput.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/tokens/inputs/TextInput.css",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
