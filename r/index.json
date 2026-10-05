@@ -15,18 +15,6 @@
       "description": "NamedIcon 发布版：内嵌组件所需 SVG（Remix Icon, Apache 2.0）"
     },
     {
-      "name": "gradient-mesh-bg",
-      "type": "registry:component",
-      "title": "渐变网格背景",
-      "description": "三个渐变光球缓慢流动的背景"
-    },
-    {
-      "name": "magnetic-button",
-      "type": "registry:component",
-      "title": "磁吸按钮",
-      "description": "鼠标靠近产生磁吸效果的按钮"
-    },
-    {
       "name": "switch-toggle",
       "type": "registry:component",
       "title": "开关按钮",
@@ -109,12 +97,6 @@
       "type": "registry:component",
       "title": "分段导航",
       "description": "分段切换导航，文字+图标/仅文字/仅图标三模式"
-    },
-    {
-      "name": "tilt-card",
-      "type": "registry:component",
-      "title": "倾斜卡片",
-      "description": "鼠标悬停 3D 倾斜卡片"
     }
   ]
 }
